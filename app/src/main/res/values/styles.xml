@@ -5,4 +5,51 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="ViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    >
+
+    <style name="TextViewStyle" parent="ViewStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextViewStyle2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+    <style name="TextViewStyle4">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextViewStyle3">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.333333</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="ImageViewStyle" parent="ViewStyle">
+        <item name="android:background">@drawable/d00</item>
+    </style>
+
+    <style name="ImageViewStyle2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.333333</item>
+        <item name="android:gravity">center</item>
+        <item name="android:src">@drawable/d00</item>
+    </style>
 </resources>
