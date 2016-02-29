@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        queryWeather();
         /*mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull2refresh);
         mPullRefreshScrollView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ScrollView>() {
 
@@ -58,5 +60,26 @@ public class MainActivity extends AppCompatActivity {
 
             super.onPostExecute(result);
         }
+    }
+    public void queryWeather(){
+        Parameters parameters = new Parameters();
+        parameters.add("cityname","北京");
+        parameters.add("format", 2);
+        JuheData.executeWithAPI(getApplication(), 39, "http://v.juhe.cn/weather/index", JuheData.GET, parameters, new DataCallBack() {
+            @Override
+            public void onSuccess(int i, String s) {
+                System.out.println(s);
+            }
+
+            @Override
+            public void onFinish() {
+                Toast.makeText(getApplicationContext(),"请求成功", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(int i, String s, Throwable throwable) {
+                Toast.makeText(getApplicationContext(),"请求失败", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
