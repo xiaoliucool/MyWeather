@@ -21,6 +21,7 @@ import com.xiaoliu.myweather.db.MyWeatherDB;
 import com.xiaoliu.myweather.model.City;
 import com.xiaoliu.myweather.model.County;
 import com.xiaoliu.myweather.model.Province;
+import com.xiaoliu.myweather.utils.ActivityController;
 import com.xiaoliu.myweather.utils.HttpCallbackListener;
 import com.xiaoliu.myweather.utils.HttpUtils;
 import com.xiaoliu.myweather.utils.Utility;
@@ -116,6 +117,7 @@ public class ChooseAreaActivity extends Activity {
         });
         Log.i("coolweather", "开始查询province数据");
         queryProvinces();
+        ActivityController.addActivity(this);
     }
 
     /**

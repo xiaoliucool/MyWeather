@@ -29,6 +29,7 @@ import com.xiaoliu.myweather.model.FutureWeather;
 import com.xiaoliu.myweather.pull2refresh.PullToRefreshBase;
 import com.xiaoliu.myweather.pull2refresh.PullToRefreshScrollView;
 import com.xiaoliu.myweather.service.AutoUpdateService;
+import com.xiaoliu.myweather.utils.ActivityController;
 import com.xiaoliu.myweather.utils.Constant;
 import com.xiaoliu.myweather.utils.HttpCallbackListener;
 import com.xiaoliu.myweather.utils.HttpUtils;
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent service = new Intent(this, AutoUpdateService.class);
         startService(service);
+        ActivityController.addActivity(this);
     }
 
     /**
@@ -303,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "再按一次退出程序",Toast.LENGTH_SHORT).show();
                 timer.schedule(task, 2000);
             }else{
-                finish();
+                ActivityController.finishAll();
                 System.exit(0);
             }
             return true;
